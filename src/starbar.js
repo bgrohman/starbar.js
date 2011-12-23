@@ -34,12 +34,15 @@
 
     /**
      * Build a starbar graph.
-     * @param el DOM element in which to create the graph
-     * @param labels array of label strings
-     * @param values array of values
+     * @param options.el DOM element in which to create the graph
+     * @param options.labels array of label strings
+     * @param options.values array of values
      */
-    function graph(el, labels, values) {
-        var length = labels.length,
+    function graph(options) {
+        var el = options.el,
+            labels = options.labels,
+            values = options.values,
+            length = labels.length,
             table = globals.document.createElement('table'),
             i;
 

@@ -16,7 +16,11 @@ test('a simple graph', function() {
         data = [1, 2, 3],
         el = document.getElementById('test-1');
 
-    starbar.graph(el, labels, data);
+    starbar.graph({
+        el: el, 
+        labels: labels, 
+        values: data
+    });
 });
 
 test('a bigger graph', function() {
@@ -24,7 +28,11 @@ test('a bigger graph', function() {
         data = [10, 7, 3, 5, 15],
         el = document.getElementById('test-2');
 
-    starbar.graph(el, labels, data);
+    starbar.graph({
+        el: el, 
+        labels: labels, 
+        values: data
+    });
 });
 </script>
 </head>
