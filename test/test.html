@@ -2,9 +2,13 @@
 <html>
 <head>
 <title>starbar.js - tests</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <link href="qunit.css" rel="stylesheet" type="text/css" media="screen"/>
 <script src="qunit.js"></script>
+
 <script src="../src/starbar.js"></script>
+<link href="../src/starbar.css" rel="stylesheet" type="text/css" media="screen"/>
+
 <script>
 test('the basics', function() {
     ok(starbar);
@@ -14,25 +18,35 @@ test('the basics', function() {
 test('a simple graph', function() {
     var labels = ['one', 'two', 'three'],
         data = [1, 2, 3],
-        el = document.getElementById('test-1');
+        el = $('#test-1')[0];
 
     starbar.graph({
         el: el, 
         labels: labels, 
         values: data
     });
+
+    equal(1, $('#test-1 .starbar-graph').length);
+    equal(3, $('#test-1 .starbar-graph .starbar-graph-row').length);
+    equal(3, $('#test-1 .starbar-graph .starbar-graph-label').length);
+    equal(3, $('#test-1 .starbar-graph .starbar-graph-value').length);
 });
 
 test('a bigger graph', function() {
     var labels = ['foo', 'bar', 'baz', 'foobar', 'foobarbaz'],
         data = [10, 7, 3, 5, 15],
-        el = document.getElementById('test-2');
+        el = $('#test-2')[0];
 
     starbar.graph({
         el: el, 
         labels: labels, 
         values: data
     });
+
+    equal(1, $('#test-2 .starbar-graph').length);
+    equal(5, $('#test-2 .starbar-graph .starbar-graph-row').length);
+    equal(5, $('#test-2 .starbar-graph .starbar-graph-label').length);
+    equal(5, $('#test-2 .starbar-graph .starbar-graph-value').length);
 });
 </script>
 </head>

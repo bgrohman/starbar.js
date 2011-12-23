@@ -1,0 +1,24 @@
+.starbar-graph {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial';
+    font-weight: normal;
+    border-collapse: collapse;
+}
+
+.starbar-graph-label, .starbar-graph-value {
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.starbar-graph .starbar-graph-label {
+    font-style: italic;
+    color: #333333;
+}
+
+.starbar-graph .starbar-graph-value {
+    font-weight: bold;
+}
+
+.starbar-graph .starbar-graph-row.odd {
+    background-color: #eeeeee;
+}

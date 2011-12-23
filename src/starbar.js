@@ -19,16 +19,22 @@
         }
     }
 
-    function addRow(el, label, value) {
+    function addRow(el, label, value, num) {
         var document = globals.document,
             r = document.createElement('tr'),
             dl = document.createElement('td'),
             dv = document.createElement('td');
 
         dl.innerHTML = label;
+        dl.className = 'starbar-graph-label';
+
         dv.innerHTML = value;
+        dv.className = 'starbar-graph-value';
+
         r.appendChild(dl);
         r.appendChild(dv);
+        r.className = (num % 2 === 0) ? 'starbar-graph-row even' : 'starbar-graph-row odd';
+
         el.appendChild(r);
     }
 
@@ -47,9 +53,10 @@
             i;
 
         for (i = 0; i < length; i++) {
-            addRow(table, labels[i], repeat("*", Math.abs(values[i])));
+            addRow(table, labels[i], repeat("*", Math.abs(values[i])), i);
         }
 
+        table.className = 'starbar-graph';
         el.appendChild(table);
     }
 
