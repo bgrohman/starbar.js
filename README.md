@@ -11,8 +11,6 @@ starbar.graph({
 });
 ```
 
-<link rel="stylesheet" type="text/css" href="https://raw.github.com/bgrohman/starbar.js/master/src/starbar.css"/>
-
 <table class="starbar-graph">
     <tr class="starbar-graph-row even">
         <td class="starbar-graph-label">foo</td>
